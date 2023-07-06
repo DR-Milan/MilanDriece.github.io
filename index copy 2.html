@@ -6,9 +6,36 @@
 -->
 <html>
 <head>
-	<title>Starline - Project Page</title>
+	<title>Project Page - Milan Driece</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="assets/css/prism.css" />
+	<style>
+		/* Project Section */
+		#project .major {
+		  text-align: center;
+		}
+		
+		#project .project-description {
+		  margin-bottom: 2rem;
+		}
+		
+		#project .youtube-video {
+		  text-align: center;
+		}
+		
+		#project .code-snippets {
+		  text-align: center;
+		  margin-top: 2rem;
+		}
+		
+		#project .snippet-toggle {
+		  display: inline-block;
+		}
+		</style>
+
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -19,31 +46,64 @@
 		<div class="inner">
 			<span class="icon solid major fa-star"></span>
 			<h1><strong>Starline</strong></h1>
-			<p>This is a 3D first-person puzzle game that I made in a team with 4 artist and 2 developers</p>
+			<p>A 3D first-person puzzle game.</p>
 			<ul class="actions special">
 				<li><a href="#project" class="button scrolly">Discover</a></li>
 			</ul>
 		</div>
 	</section>
 
-	<!-- Project Section -->
 	<section id="project" class="main style2">
 		<div class="container">
-			<div class="row gtr-150">
-				<div class="col-12">
-					<header class="major">
-						<h2>Project Name</h2>
-					</header>
-					<p>Description of the project goes here.</p>
-				</div>
-				<div class="col-12">
-					<div class="project-details">
-						<!-- Add project details and content here -->
+		  <div class="row gtr-150">
+			<div class="col-12">
+				<header class="major text-center">
+					<h2>Introduction</h2>
+				  </header>
+				  
+				  <div class="row gtr-150">
+					<div class="col-12 col-md-6">
+					  <div class="project-description">
+						<p>This game was created as a school project within a team of 4 artists and 2 developers over a span of 8 weeks. We had to make a first-person puzzle game with a few conditions:</p>
+						<ol>
+						  <li>The game must have 3 levels.</li>
+						  <li>Each level is referred to as a "cell" and must not exceed 20 meters in length, width, or height (20x20x20 meters).</li>
+						  <li>You must solve the first cell before advancing to the next. So you can't go from cell to cell without completing them.</li>
+						  <li>The game needs to have one mechanic that keeps coming back every level.</li>
+						</ol>
+						<p>Here is the final product we created:</p>
+					  </div>
 					</div>
-				</div>
+					<div class="col-12 col-md-6">
+					  <div class="youtube-video text-center">
+						<iframe width="100%" height="630" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+					  </div>
+					</div>
+				  </div>
+			<p>At first we where really struggeling with the puzzles we wanted to make and we didn't really know what kindoff main machanic we wanted to have.</p>
+			<div class="col-12">
+			  <div class="code-snippets">
+				<button class="snippet-toggle button scrolly">Show Code</button>
+				<pre><code class="language-csharp">
+	  private void Start()
+	  {
+		m_button = GetComponent&lt;Button&gt;();
+		m_buttonText = GetComponentInChildren&lt;TextMeshProUGUI&gt;();
+		m_originalTextFont = m_buttonText.fontSize;
+	  
+		m_biggerTextFont = (m_buttonText.fontSize + m_highlightedTextFontIncrement);
+	  }
+	  
+	  public void OnPointerEnter(PointerEventData eventData)
+	  {
+		m_buttonText.fontSize = m_biggerTextFont;
+	  }
+				</code></pre>
+			  </div>
 			</div>
+		  </div>
 		</div>
-	</section>
+	  </section>
 
 		<!-- Five -->
 		<!--
@@ -379,7 +439,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>	
+
+			<script src="assets/js/prism.js"></script>
+			<script>
+				$(document).ready(function() {
+				  $(".snippet-toggle").click(function(event) {
+					event.preventDefault();
+					$(this).next("pre").slideToggle();
+				  });
+				});
+				</script>
+
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
