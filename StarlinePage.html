@@ -44,21 +44,38 @@
 			  z-index: 9999;
 			}
 		  </style>
+
+		<style>
+			.row {
+		  display: flex;
+		  flex-wrap: wrap;
+		}
+		
+		.video-container {
+		  flex: 0 0 20%; /* Adjust the width as needed */
+		}
+		
+		.text-container {
+		  flex: 0 0 50%; /* Adjust the width as needed */
+		  overflow: auto; /* Add overflow property to control long text */
+		}
+		  </style>
+
 		  
-		  <a href="index.html#three" class="back-button button">Main page</a>
-
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
-<body class="is-preload">
-
-	<!-- Header -->
-	<section id="header">
-		<div class="inner">
-			<span class="icon solid major fa-star"></span>
-			<h1><strong>Starline</strong></h1>
-			<p>A 3D first-person puzzle game.</p>
-			<ul class="actions special">
+		  
+		  <link rel="stylesheet" href="assets/css/main.css" />
+		  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		</head>
+		<body class="is-preload">
+			
+			<!-- Header -->
+			<section id="header">
+				<a href="index.html#three" class="back-button button">Main page</a>
+				<div class="inner">
+					<span class="icon solid major fa-star"></span>
+					<h1><strong>Starline</strong></h1>
+					<p>A 3D first-person puzzle game.</p>
+					<ul class="actions special">
 				<li><a href="#project" class="button scrolly">Discover</a></li>
 			</ul>
 		</div>
@@ -100,11 +117,23 @@
 					  <div class="row gtr-150">
 						<div class="col-12 col-md-6">
 						  <div class="project-description">
-							<p>At first, we were really struggling with the puzzles we wanted to create, and we didn't have a clear idea of the main mechanic we wanted to incorporate.</p>
-							<!-- Rest of the project description -->
+							<p>At first, we were really struggling with the puzzles we wanted to create, and we didn't have a clear idea of the main mechanic we wanted to incorporate. So we made a bunch of different puzzles with different mechanics, and I ended up making this laser prototype which you can see in the video:</p>
 						  </div>
 						</div>
 					  </div>
+					
+					  <div class="row">
+						<div class="video-container">
+						  <video width="480" height="270" controls muted loop preload="metadata">
+							<source src="images/Light_Reflection_and_colour_Demo.mp4" type="video/mp4">
+							Your browser does not support the video tag.
+						  </video>
+						</div>
+						<div class="text-container">
+						  <p>As you can see in the video the lasers react to mirrors and change colors if it is being hit by other lasers</p>
+						</div>
+					  </div>
+
 			  <div class="code-snippets">
 				<button class="snippet-toggle button scrolly">Show Code</button>
 				<pre><code class="language-csharp">
