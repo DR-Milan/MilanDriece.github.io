@@ -166,11 +166,190 @@ public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
 	<div class="container">
 	  <div class="row gtr-150">
 		<div class="col-12 text-center">
-		  <p>Eventually, we decided that lasers would be the main mechanic for the game.</p>
+		  <p>Eventually, we decided that lasers would be the main mechanic for the game. But we would change the way you interact with the laser, so now you can go into the laser and control it like a camera. Since I made the laser, and it's kind of the bread and butter of our project, I will explain how everything works in more detail. When a laser hits another laser, the colors start to mix. The code begins a function that takes both colors and returns the blended color. Then, the mixed color is given to a function called ChangeColor.</p>
 		</div>
 	  </div>
-	</div>
-  </section>
+  
+	  <div class="row">
+		<div class="col-12 text-center">
+		  <div class="code-snippets">
+			<div class="row">
+			  <div class="col-12 text-center">
+				<span class="image fit"><img src="images/LaserChangingColor.png" alt="" /></span>
+			  </div>
+			</div>
+			<button class="snippet-toggle button scrolly">Show Code</button>
+			<div class="code-block">
+			  <pre><code class="language-csharp">
+  if (colliderTag == "LightShooter")
+  {
+	CurrentColor = OriginalColor;
+  
+	ShootLazer shootLazer = colliderObject.GetComponentInChildren<ShootLazer>();
+	shootLazer.Lazerbeam.m_mixColors = true;
+  
+	Color mixedColor = MixColors(CurrentColor, shootLazer.Lazerbeam.OriginalColor);
+	shootLazer.Lazerbeam.ChangeColor(mixedColor);
+  
+	AddPointAndUpdateLaser(hitInfo.point);
+  }
+			  </code></pre>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</section>
+
+	<section id="project" class="main style2">
+		<div class="container">
+			<div class="row gtr-150">
+				<div class="col-12 text-center">
+					<h3>ChangeColor Function Explained</h3>
+					<p>The ChangeColor function plays a crucial role in our project and has evolved through multiple phases of development. Initially, I attempted to directly change the color of the line renderer and the laser to the blended color. However, this approach resulted in various issues and inconsistent behavior.</p>
+					<p>To resolve these problems, I introduced two variables called OriginalColor and CurrentColor. By carefully adjusting and fine-tuning the code, I was able to ensure that the function consistently and accurately performed its intended task.</p>
+					<p>Later, I received valuable feedback from a teacher who suggested that the colors were not distinct enough. To address this concern, I made further modifications to the code. I created a list of materials that our artist could customize to their preferences, allowing for more flexibility in color selection.</p>
+					<p>The code now dynamically selects the material that best matches the desired color for the laser by calculating the closest distance between colors. This ensures a more visually appealing and clearly distinguishable laser beam.</p>
+				</div>
+			</div>
+	
+			<div class="row">
+				<div class="col-12 text-center">
+					<div class="code-snippets">
+						<button class="snippet-toggle button scrolly">Show Code</button>
+						<div class="code-block">
+							<pre><code class="language-csharp">
+	public void ChangeColor(Color color)
+	{
+		Laser.colorGradient.alphaKeys[0].alpha = 1f;
+		Laser.colorGradient.alphaKeys[1].alpha = 1f;
+		CurrentColor = color;
+		Laser.startColor = color;
+		Laser.endColor = color;
+	
+		Material closestMaterial = null;
+		float closestDistance = Mathf.Infinity;
+	
+		for (int i = 0; i < m_allMaterials.Count; i++)
+		{
+			Color materialColor = m_allMaterials[i].color;
+			float distance = ColorDistance(color, materialColor);
+	
+			if (distance < closestDistance)
+			{
+				closestMaterial = m_allMaterials[i];
+				closestDistance = distance;
+			}
+		}
+	
+		// Apply the closest material to the laser
+		Laser.material = closestMaterial;
+		m_lazerShooter.ChangeBallMaterial(Laser.material);
+		m_lazerShooter.CheckCurrentColor(CurrentColor);
+	}
+							</code></pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="project" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12 text-center">
+			  <h3>The Laser Target</h3>
+			  <p>When the lasers hit the target, the HitChest function is called, and the color of the laser is passed as a parameter. That color is then added to a list called m_unlockedColor. Additionally, within this function, the emission and rotation of the indicator are adjusted to reflect the laser's impact on the target. However, I have excluded specific lines of code for simplicity.</p>
+			  <p>Here's a visual representation of the laser hitting the target:</p>
+			  <img src="images/Lazer On UnlockIndicator.gif" alt="Laser hitting the target" />
+			</div>
+		  </div>
+	  
+		  <div class="row">
+			<div class="col-12 text-center">
+			  <div class="code-snippets">
+				<button class="snippet-toggle button scrolly">Show Code</button>
+				<div class="code-block">
+				  <pre><code class="language-csharp">
+	public void HitChest(Color color)
+	{
+		for (int i = 0; i < m_allColors.Count; i++)
+		{
+		  float distance = ColorDistance(color, m_allColors[i]);
+		  if (distance <= m_poleData.ColourSimulairtyThreshold)
+		  {
+			if (!m_unlockedColor.Contains(m_allColors[i]))
+			{
+			  // Find the indicator with the corresponding color
+			  GameObject colorIndicator = m_colorIndicators.FirstOrDefault(indicator => ColorDistance(indicator.GetComponent<Renderer>().sharedMaterial.GetColor("_Color"), m_allColors[i]) <= m_poleData.ColorIndicatorThreshold);
+			
+			  if (colorIndicator != null)
+			  {
+				// Code for adjusting the indicator's rotation and emission
+				// (excluded for simplicity)
+			  }
+			  m_unlockedColor.Add(m_allColors[i]);
+			}
+		  }
+		}
+	}
+				  </code></pre>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	  <section id="achievements" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12 text-center">
+			  <h3>Achievement System</h3>
+			  <p>In our game, I have developed a comprehensive achievement system. I utilized the observer pattern to easily add various achievements to the game.</p>
+			  <p>To handle the achievements, I implemented a Dictionary that executes specific actions when an achievement is unlocked.</p>
+			</div>
+		  </div>
+	  
+		  <div class="row">
+			<div class="col-12 text-center">
+			  <div class="code-snippets">
+				<button class="snippet-toggle button scrolly">Show Code</button>
+				<div class="code-block">
+				  <pre><code class="language-csharp">
+	  private Dictionary<AllAchievements, System.Action> m_achievementActionHandler;
+	  
+	  private void Awake()
+	  {
+		m_achievementActionHandler = new Dictionary<AllAchievements, System.Action>()
+		{
+		  { AllAchievements.ColorsMixed, () => HandleSingleAchievement(AllAchievements.ColorsMixed, "Colors mixing", m_colorsMixedIcon) },
+		  { AllAchievements.Cell1Completed, () => HandleSingleAchievement(AllAchievements.Cell1Completed, "The beginnings!", m_cell1CompletedIcon) },
+		  { AllAchievements.Cell2Completed, () => HandleSingleAchievement(AllAchievements.Cell2Completed, "Loop breaker!", m_cell2CompletedIcon) },
+		  { AllAchievements.Bookworm, () => HandleCountAchievement(ref m_booksOpened, FindObjectsOfType<Book>().Count(), AllAchievements.Bookworm, "Bookworm!", m_bookWormIcon) },
+		};
+	  }
+				  </code></pre>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  
+		  <div class="row gtr-150">
+			<div class="col-12 text-center">
+			<p> </p>
+			  <p>By using the observer pattern and the Dictionary, I was able to easily define and manage various achievements. Each entry in the Dictionary corresponds to a specific achievement and its associated action.</p>
+			  <p>For example, when the "ColorsMixed" achievement is unlocked, the "Colors mixing" message will be displayed along with the appropriate icon (m_colorsMixedIcon). Similarly, other achievements such as "Cell1Completed", "Cell2Completed", and "Bookworm" are handled in a similar manner.</p>
+			</div>
+		  </div>
+	  
+		  <div class="row">
+			<div class="col-12 text-center">
+			  <img src="images/Achievement Popups.gif" alt="Achievement Popups" />
+			</div>
+		  </div>
+		</div>
+	  </section>
 
 		<!-- Five -->
 		<!--
