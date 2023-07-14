@@ -60,6 +60,43 @@
 		  overflow: auto; /* Add overflow property to control long text */
 		}
 		  </style>
+
+		  <style>.image-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		  }
+		  
+		  .image-wrapper img {
+			max-width: 100%;
+			max-height: 100%;
+		  }</style>
+
+		  <style>.image-container {
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+		  }
+		  
+		  .project-gif {
+			max-width: 100%;
+			height: auto;
+		  }
+		  </style>
+		  
+		<style>
+		.image-container {
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+		  }
+
+		  .achievement-gif {
+			max-width: 100%;
+			height: auto;
+		  }
+		</style>
 		  
 		  <link rel="stylesheet" href="assets/css/main.css" />
 		  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -83,92 +120,103 @@
 		<div class="container">
 		  <div class="row gtr-150">
 			<div class="col-12">
-				<header class="major text-center">
-					<h2>Introduction</h2>
+			  <header class="major text-center">
+				<h2>Introduction</h2>
+			  </header>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12 col-md-6">
+				  <div class="project-description">
+					<p>This game was created as a school project within a team of 4 artists and 2 developers over a span of 8 weeks. We had to make a first-person puzzle game with a few conditions:</p>
+					<ol>
+					  <li>The game must have 3 levels.</li>
+					  <li>Each level is referred to as a "cell" and must not exceed 20 meters in length, width, or height (20x20x20 meters).</li>
+					  <li>You must solve the first cell before advancing to the next. So you can't go from cell to cell without completing them.</li>
+					  <li>The game needs to have one mechanic that keeps coming back every level.</li>
+					</ol>
+					<p>Here is the final product we created:</p>
+				  </div>
+				</div>
+				<div class="col-12 col-md-6">
+				  <div class="youtube-video text-center" style="margin-bottom: 100px;">
+					<iframe width="100%" height="630" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12">
+				  <header class="major text-center">
+					<h2>The Making of Starline</h2>
 				  </header>
-				  
-				  <div class="row gtr-150">
-					<div class="col-12 col-md-6">
-					  <div class="project-description">
-						<p>This game was created as a school project within a team of 4 artists and 2 developers over a span of 8 weeks. We had to make a first-person puzzle game with a few conditions:</p>
-						<ol>
-						  <li>The game must have 3 levels.</li>
-						  <li>Each level is referred to as a "cell" and must not exceed 20 meters in length, width, or height (20x20x20 meters).</li>
-						  <li>You must solve the first cell before advancing to the next. So you can't go from cell to cell without completing them.</li>
-						  <li>The game needs to have one mechanic that keeps coming back every level.</li>
-						</ol>
-						<p>Here is the final product we created:</p>
-					  </div>
-					</div>
-					<div class="col-12 col-md-6">
-						<div class="youtube-video text-center" style="margin-bottom: 100px;">
-						  <iframe width="100%" height="630" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-						</div>
-					  </div>
-					  
-					  <div class="col-12">
-						<header class="major text-center">
-						  <h2>The Making of Starline</h2>
-						</header>
-					  </div>
-					  
-					  <div class="row gtr-150">
-						<div class="col-12 col-md-6">
-						  <div class="project-description">
-							<p>At first, we were really struggling with the puzzles we wanted to create, and we didn't have a clear idea of the main mechanic we wanted to incorporate. So we made a bunch of different puzzles with different mechanics, and I ended up making this laser prototype which you can see in the video:</p>
-						  </div>
-						</div>
-					  </div>
-					
-				<div class="row">
-				<div class="video-container">
+				</div>
+			  </div>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12 col-md-6">
+				  <div class="project-description">
+					<p>At first, we were really struggling with the puzzles we wanted to create, and we didn't have a clear idea of the main mechanic we wanted to incorporate. So we made a bunch of different puzzles with different mechanics, and I ended up making this laser prototype which you can see in the video:</p>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="row">
+				<div class="col-12 video-container">
 				  <video width="480" height="270" controls muted loop preload="auto">
 					<source src="images/Light_Reflection_and_colour_Demo.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				  </video>
 				</div>
-				<div class="text-container">
-    <p>As you can see in the video, the lasers react to mirrors and change colors if they are hit by other lasers.</p>
-    <p>The laser was created in two parts: the visual aspect and what happens behind the scenes. To make the laser function as intended, I utilized raycasting, as you can see in the code snippet below. Additionally, each laser was equipped with a LineRenderer, with its positions dynamically added through code.</p>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-12">
-    <div class="code-snippets">
-      <button class="snippet-toggle button scrolly">Show Code</button>
-      <div class="code-block">
-        <pre><code class="language-csharp">
-public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
-{
-	LaserIndices.Add(pos);
-	
-	Ray ray = new Ray(pos, dir);
-	RaycastHit hit;
-
-	ChangeColor(CurrentColor);
-
-	if (Physics.Raycast(ray, out hit, 30, 1))
-	{
-		CheckHit(hit, dir, laser);
-	}
-	else
-	{
-		LaserIndices.Add(ray.GetPoint(30));
-		UpdateLaser();
-	}
-}
-</code></pre>
-</div>
-</section>
-
-<section id="project" class="main style2">
-	<div class="container">
-	  <div class="row gtr-150">
-		<div class="col-12 text-center">
-		  <p>Eventually, we decided that lasers would be the main mechanic for the game. But we would change the way you interact with the laser, so now you can go into the laser and control it like a camera. Since I made the laser, and it's kind of the bread and butter of our project, I will explain how everything works in more detail. When a laser hits another laser, the colors start to mix. The code begins a function that takes both colors and returns the blended color. Then, the mixed color is given to a function called ChangeColor.</p>
+				<div class="col-12 text-container">
+				  <p>As you can see in the video, the lasers react to mirrors and change colors if they are hit by other lasers.</p>
+				  <p>The laser was created in two parts: the visual aspect and what happens behind the scenes. To make the laser function as intended, I utilized raycasting, as you can see in the code snippet below. Additionally, each laser was equipped with a LineRenderer, with its positions dynamically added through code.</p>
+				</div>
+			  </div>
+	  
+			  <div class="row">
+				<div class="col-12">
+				  <div class="code-snippets">
+					<button class="snippet-toggle button scrolly">Show Code</button>
+					<div class="code-block">
+					  <pre><code class="language-csharp">
+	  public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
+	  {
+		LaserIndices.Add(pos);
+	  
+		Ray ray = new Ray(pos, dir);
+		RaycastHit hit;
+	  
+		ChangeColor(CurrentColor);
+	  
+		if (Physics.Raycast(ray, out hit, 30, 1))
+		{
+		  CheckHit(hit, dir, laser);
+		}
+		else
+		{
+		  LaserIndices.Add(ray.GetPoint(30));
+		  UpdateLaser();
+		}
+	  }
+					  </code></pre>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
 		</div>
-	  </div>
+	  </section>
+
+	  <section id="project" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12 text-center">
+			  <h3>The lasers mixing colors</h3>
+			  <p>Eventually, we decided that lasers would be the main mechanic for the game. But we would change the way you interact with the laser, so now you can go into the laser and control it like a camera. Since I made the laser, and it's kind of the bread and butter of our project, I will explain how everything works in more detail.</p>
+			  <p>When a laser hits another laser, the colors start to mix. The code begins a function that takes both colors and returns the blended color. Then, the mixed color is given to a function called ChangeColor.</p>
+			</div>
+		  </div>
   
 	  <div class="row">
 		<div class="col-12 text-center">
@@ -261,7 +309,9 @@ public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
 			  <h3>The Laser Target</h3>
 			  <p>When the lasers hit the target, the HitChest function is called, and the color of the laser is passed as a parameter. That color is then added to a list called m_unlockedColor. Additionally, within this function, the emission and rotation of the indicator are adjusted to reflect the laser's impact on the target. However, I have excluded specific lines of code for simplicity.</p>
 			  <p>Here's a visual representation of the laser hitting the target:</p>
-			  <img src="images/Lazer On UnlockIndicator.gif" alt="Laser hitting the target" />
+			  <div class="image-container">
+				<img src="images/Lazer On UnlockIndicator.gif" alt="Laser hitting the target" class="project-gif" />
+			  </div>
 			</div>
 		  </div>
 	  
@@ -271,28 +321,28 @@ public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
 				<button class="snippet-toggle button scrolly">Show Code</button>
 				<div class="code-block">
 				  <pre><code class="language-csharp">
-	public void HitChest(Color color)
-	{
-		for (int i = 0; i < m_allColors.Count; i++)
+		public void HitChest(Color color)
 		{
-		  float distance = ColorDistance(color, m_allColors[i]);
-		  if (distance <= m_poleData.ColourSimulairtyThreshold)
+		  for (int i = 0; i < m_allColors.Count; i++)
 		  {
-			if (!m_unlockedColor.Contains(m_allColors[i]))
+			float distance = ColorDistance(color, m_allColors[i]);
+			if (distance <= m_poleData.ColourSimulairtyThreshold)
 			{
-			  // Find the indicator with the corresponding color
-			  GameObject colorIndicator = m_colorIndicators.FirstOrDefault(indicator => ColorDistance(indicator.GetComponent<Renderer>().sharedMaterial.GetColor("_Color"), m_allColors[i]) <= m_poleData.ColorIndicatorThreshold);
-			
-			  if (colorIndicator != null)
+			  if (!m_unlockedColor.Contains(m_allColors[i]))
 			  {
-				// Code for adjusting the indicator's rotation and emission
-				// (excluded for simplicity)
+				// Find the indicator with the corresponding color
+				GameObject colorIndicator = m_colorIndicators.FirstOrDefault(indicator => ColorDistance(indicator.GetComponent<Renderer>().sharedMaterial.GetColor("_Color"), m_allColors[i]) <= m_poleData.ColorIndicatorThreshold);
+	  
+				if (colorIndicator != null)
+				{
+				  // Code for adjusting the indicator's rotation and emission
+				  // (excluded for simplicity)
+				}
+				m_unlockedColor.Add(m_allColors[i]);
 			  }
-			  m_unlockedColor.Add(m_allColors[i]);
 			}
 		  }
 		}
-	}
 				  </code></pre>
 				</div>
 			  </div>
@@ -317,18 +367,18 @@ public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
 				<button class="snippet-toggle button scrolly">Show Code</button>
 				<div class="code-block">
 				  <pre><code class="language-csharp">
-	  private Dictionary<AllAchievements, System.Action> m_achievementActionHandler;
-	  
-	  private void Awake()
-	  {
-		m_achievementActionHandler = new Dictionary<AllAchievements, System.Action>()
-		{
-		  { AllAchievements.ColorsMixed, () => HandleSingleAchievement(AllAchievements.ColorsMixed, "Colors mixing", m_colorsMixedIcon) },
-		  { AllAchievements.Cell1Completed, () => HandleSingleAchievement(AllAchievements.Cell1Completed, "The beginnings!", m_cell1CompletedIcon) },
-		  { AllAchievements.Cell2Completed, () => HandleSingleAchievement(AllAchievements.Cell2Completed, "Loop breaker!", m_cell2CompletedIcon) },
-		  { AllAchievements.Bookworm, () => HandleCountAchievement(ref m_booksOpened, FindObjectsOfType<Book>().Count(), AllAchievements.Bookworm, "Bookworm!", m_bookWormIcon) },
-		};
-	  }
+private Dictionary<AllAchievements, System.Action> m_achievementActionHandler;
+
+private void Awake()
+{
+	m_achievementActionHandler = new Dictionary<AllAchievements, System.Action>()
+	{
+	  { AllAchievements.ColorsMixed, () => HandleSingleAchievement(AllAchievements.ColorsMixed, "Colors mixing", m_colorsMixedIcon) },
+	  { AllAchievements.Cell1Completed, () => HandleSingleAchievement(AllAchievements.Cell1Completed, "The beginnings!", m_cell1CompletedIcon) },
+	  { AllAchievements.Cell2Completed, () => HandleSingleAchievement(AllAchievements.Cell2Completed, "Loop breaker!", m_cell2CompletedIcon) },
+	  { AllAchievements.Bookworm, () => HandleCountAchievement(ref m_booksOpened, FindObjectsOfType<Book>().Count(), AllAchievements.Bookworm, "Bookworm!", m_bookWormIcon) },
+	};
+}
 				  </code></pre>
 				</div>
 			  </div>
@@ -337,7 +387,7 @@ public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
 	  
 		  <div class="row gtr-150">
 			<div class="col-12 text-center">
-			<p> </p>
+			  <p> </p>
 			  <p>By using the observer pattern and the Dictionary, I was able to easily define and manage various achievements. Each entry in the Dictionary corresponds to a specific achievement and its associated action.</p>
 			  <p>For example, when the "ColorsMixed" achievement is unlocked, the "Colors mixing" message will be displayed along with the appropriate icon (m_colorsMixedIcon). Similarly, other achievements such as "Cell1Completed", "Cell2Completed", and "Bookworm" are handled in a similar manner.</p>
 			</div>
@@ -345,12 +395,74 @@ public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
 	  
 		  <div class="row">
 			<div class="col-12 text-center">
-			  <img src="images/Achievement Popups.gif" alt="Achievement Popups" />
+			  <div class="image-container">
+				<img src="images/Achievement Popups.gif" alt="Achievement Popups" class="achievement-gif" />
+			  </div>
 			</div>
 		  </div>
 		</div>
 	  </section>
 
+	  <section id="other-creations" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12 text-center">
+			  <h3>Other Creations</h3>
+			  <p>Aside from the achievements system, I have also developed various other features and effects to enhance the gameplay experience. Here are a couple of examples:</p>
+			</div>
+		  </div>
+	  
+		  <div class="row">
+			<div class="col-6 text-center">
+			  <div class="image-wrapper">
+				<img src="images/Door opened.gif" alt="Door Opened" />
+			  </div>
+			  <p>I made a door for the second level</p>
+			</div>
+			<div class="col-6 text-center">
+			  <div class="image-wrapper">
+				<img src="images/TextFont effect.gif" alt="Text Font Effect" />
+			  </div>
+			  <p>I added a cool effect for the UI</p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+
+	  <section id="project" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12">
+			  <header class="major text-center">
+				<h2>Discover Starline</h2>
+			  </header>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12 col-md-6">
+				  <div class="project-description">
+					<p>So that's how Starline came to life! If you're intrigued by the game and want to experience it for yourself, you can download it now from our itch.io page.</p>
+					<div class="text-center">
+						<a href="https://m1l4n.itch.io/starline" class="button" target="_blank">Download and Play on itch.io</a>
+					  </div>
+				  </div>
+				</div>
+				<div class="col-12 col-md-6">
+				  <div class="youtube-video">
+					<iframe width="100%" height="400" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+					<div class="video-caption">Watch the Trailer</div>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12 text-center">
+				  <p>If you're still not convinced, take a moment to watch the awesome trailer created by our talented artists. It's sure to pique your interest!</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
 		<!-- Five -->
 		<!--
 			<section id="five" class="main style1">
