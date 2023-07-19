@@ -116,93 +116,236 @@
 				</div>
 			</section>
 
-	<section id="project" class="main style2">
-		<div class="container">
-		  <div class="row gtr-150">
-			<div class="col-12">
-			  <header class="major text-center">
-				<h2>Introduction</h2>
-			  </header>
-	  
-			  <div class="row gtr-150">
-				<div class="col-12 col-md-6">
-				  <div class="project-description">
-					<p>I developed an online multiplayer racing game with three artists and one other developer for a school project. We had to meet several requirements in the first two weeks which where:</p>
-					<ul>
-					  <li>Game Loop:
-						<ul>
-						  <li>Return to main menu</li>
-						  <li>Start the game</li>
-						  <li>Fail or die machanics</li>
-						</ul>
-					  </li>
-					  <li>Main Player: Well-controllable car</li>
-					  <p></p>
-					  <li>User Interface (UI):
-						<ul>
-						  <li>Countdown / Traffic light</li>
-						  <li>Speedometer</li>
-						  <li>Lap time</li>
-						  <li>Fastest lap time</li>
-						  <li>Overview of recorded times</li>
-						  <li>Time trials saving</li>
-						</ul>
-					  </li>
-					</ul>
-					<p>After successfully implementing these features, we had two additional weeks to further enhance the game according to our preferences. The result is showcased here:</p>
-				</div>
-			  </div>
-			  <div class="col-12 col-md-6">
-				<div class="youtube-video text-center" style="margin-bottom: 100px;">
-				  <iframe width="100%" height="630" src="https://www.youtube.com/embed/vhelHmB0gQA?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=vhelHmB0gQA&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-				</div>
-			  </div>
-			</div>
-	  
-			  <div class="row gtr-150">
-				<div class="col-12">
-				  <header class="major text-center">
-					<h2>The Making of Cybermania</h2>
-				  </header>
-				</div>
-			  </div>
-	  
+			<style>
+				/* Additional styles for improved spacing */
+				.project-description ul,
+				.project-description p {
+				  margin-bottom: 10px;
+				}
 			  
-			  <div class="row">
-				<div class="col-12">
-				  <div class="code-snippets">
-					<button class="snippet-toggle button scrolly">Show Code</button>
-					<div class="code-block">
-					  <pre><code class="language-csharp">
-	  public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
-	  {
-		LaserIndices.Add(pos);
-	  
-		Ray ray = new Ray(pos, dir);
-		RaycastHit hit;
-	  
-		ChangeColor(CurrentColor);
-	  
-		if (Physics.Raycast(ray, out hit, 30, 1))
-		{
-		  CheckHit(hit, dir, laser);
-		}
-		else
-		{
-		  LaserIndices.Add(ray.GetPoint(30));
-		  UpdateLaser();
-		}
-	  }
-					  </code></pre>
+				.youtube-video,
+				.project-description {
+				  margin-bottom: 40px;
+				}
+			  
+				.code-snippets .snippet-toggle {
+				  margin-bottom: 30px; /* Add more space below the buttons */
+				}
+			  
+				.code-block {
+				  padding-bottom: 10px; /* Add more space below the text */
+				}
+			  </style>
+			  
+			  
+			  <section id="project" class="main style2">
+				<div class="container">
+				  <!-- Introduction section -->
+				  <div class="row gtr-150">
+					<div class="col-12">
+					  <header class="major text-center">
+						<h2>Introduction</h2>
+					  </header>
+			  
+					  <div class="row gtr-150">
+						<div class="col-12 col-md-6">
+						  <div class="project-description">
+							<p>I developed an online multiplayer racing game with three artists and one other developer for a school project. We had to meet several requirements in the first two weeks which were:</p>
+							<ul>
+							  <li>Game Loop:
+								<ul>
+								  <li>Return to the main menu</li>
+								  <li>Start the game</li>
+								  <li>Fail or die mechanics</li>
+								</ul>
+							  </li>
+							  <li>Main Player: Well-controllable car</li>
+							  <li>User Interface (UI):
+								<ul>
+								  <li>Countdown / Traffic light</li>
+								  <li>Speedometer</li>
+								  <li>Lap time</li>
+								  <li>Fastest lap time</li>
+								  <li>Overview of recorded times</li>
+								  <li>Time trials saving</li>
+								</ul>
+							  </li>
+							</ul>
+							<p>After successfully implementing these features, we had two additional weeks to further enhance the game according to our preferences. The result is showcased here:</p>
+						  </div>
+						</div>
+						<div class="col-12 col-md-6">
+						  <div class="youtube-video text-center" style="margin-bottom: 100px;">
+							<!-- Original video embedding code -->
+							<iframe width="100%" height="630" src="https://www.youtube.com/embed/vhelHmB0gQA?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=vhelHmB0gQA&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <!-- Making of Cybermania section -->
+				  <div class="row gtr-150">
+					<div class="col-12">
+					  <header class="major text-center">
+						<h2>The Making of Cybermania</h2>
+					  </header>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<h3>The Car:</h3>
+						<p>How I came up with the idea of the car is a long story. At first, I wanted to try implementing it myself using Unity's Rigidbody and applying forces directly to the car when certain buttons are pressed.</p>
+						<div class="row">
+						  <div class="col-12">
+							<div class="code-snippets">
+							  <button class="snippet-toggle button scrolly">Show Car Movement Code</button>
+							  <div class="code-block">
+								<pre><code class="language-csharp">
+// Car movement
+if (Input.GetAxisRaw("Vertical") > 0.1f)
+{
+	_rb.AddForce(transform.forward * _speed); // Move forward
+}
+if (Input.GetAxisRaw("Vertical") < -0.1f)
+{
+	_rb.AddForce(-transform.forward * _speed); // Move backward
+}
+								</code></pre>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						<p>For steering, I attempted to rotate the car, thereby applying forces in different directions.</p>
+						<div class="row">
+						  <div class="col-12">
+							<div class="code-snippets">
+							  <button class="snippet-toggle button scrolly">Show Car Steering Code</button>
+							  <div class="code-block">
+								<pre><code class="language-csharp">
+// Car steering
+if (Input.GetAxisRaw("Horizontal") > 0.1f)
+{
+	Vector3 rotation = new Vector3(0, 1, 0);
+	transform.Rotate(rotation * _steeringSpeed * Time.deltaTime); // Turn right
+}
+if (Input.GetAxisRaw("Horizontal") < -0.1f)
+{
+	Vector3 rotation = new Vector3(0, 1, 0);
+	transform.Rotate(-rotation * _steeringSpeed * Time.deltaTime); // Turn left
+}
+								</code></pre>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						<p>However, I soon realized that this approach was not going to work. So, I decided to search the internet for a better way to create a car, and that's when I stumbled upon an excellent video by Toyful Games.</p>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row gtr-150">
+					<div class="col-12">
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p>So, after watching the video and gaining some insights, I revamped the car movement. Instead of directly adding forces, I implemented a better solution that made use of physics and wheel colliders. This resulted in a much smoother and realistic car movement.</p>
+					  </div>
+					</div>
+				  </div>
+
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p>And the special thing about the video is that it doesn't explain step by step and show what you have to program, but it gives you all the theory about how the car should work and which forces are involved. So, it was up to me to bring his theories to reality. It wasn't easy, but in the end, I figured it out.</p>
+			  
+						<p>The big difference between what I had before and what I have now is that instead of moving the car, I'm moving the wheels.</p>
+			  
+						<p>First, you need to make sure your car has suspension (so that it has springing from top to bottom). This prevents the car from tipping over when forces are applied and also keeps the car up.</p>
+			  
+						<div class="row">
+						  <div class="col-12">
+							<div class="code-snippets">
+							  <button class="snippet-toggle button scrolly">Show Suspension Code</button>
+							  <div class="code-block">
+								<pre><code class="language-csharp">
+if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 1 + _wheelRadius, _canRideOn))
+{
+	  Vector3 springDir = transform.up;
+	  Vector3 tireWorldVel = _rb.GetPointVelocity(transform.position);
+	  float offset = _restLenght - hit.distance;
+	  float vel = Vector3.Dot(springDir, tireWorldVel);
+	  // Calculates the force with the damped variables
+	  float force = (offset * _springStenght) - (vel * _damperStenght);
+	  // Adds the force to the car at the position of the wheel.
+	  _rb.AddForceAtPosition(springDir * force, transform.position);
+}
+								</code></pre>
+							  </div>
+							</div>
+						  </div>
+						</div>
+			  
+						<p>This is the code that adds the suspension.</p>
+			  
+						<div class="row">
+						  <div class="col-12">
+							<div class="code-snippets">
+							  <button class="snippet-toggle button scrolly">Show Steering Code</button>
+							  <div class="code-block">
+								<pre><code class="language-csharp">
+_yRotation = _steerCurve.Evaluate(GetComponentInParent<Rigidbody>().velocity.magnitude);
+
+Vector3 wheelEulerAngles = transform.localRotation.eulerAngles;
+
+wheelEulerAngles.y = (wheelEulerAngles.y > 180) ? wheelEulerAngles.y - 360 : wheelEulerAngles.y;
+wheelEulerAngles.y = Mathf.Clamp(wheelEulerAngles.y, -_yRotation, _yRotation);
+
+// Applies rotation to the wheels.
+transform.localRotation = Quaternion.Euler(wheelEulerAngles);
+								</code></pre>
+							  </div>
+							</div>
+						  </div>
+						</div>
+			  
+						<p>Finally, there's the acceleration, which actually moves the car forward. Again, I used an animation curve for this. It ensures that the car accelerates quickly at first and then gradually accelerates less, so you don't have a constant super-fast car.</p>
+			  
+						<div class="row">
+						  <div class="col-12">
+							<div class="code-snippets">
+							  <button class="snippet-toggle button scrolly">Show Acceleration Code</button>
+							  <div class="code-block">
+								<pre><code class="language-csharp">
+Vector3 accelDir = transform.forward;
+
+if (Input.GetAxisRaw("Vertical") > 0.0f)
+{
+	  float carSpeed = Vector3.Dot(_carTransform.forward, _rb.velocity);
+
+	  float normalizeSpeed = Mathf.Clamp01(Mathf.Abs(carSpeed) / _topSpeed);
+
+	  float availableTorque = _powerCurve.Evaluate(normalizeSpeed) * Input.GetAxisRaw("Vertical") * _acceleration;
+
+	  _rb.AddForceAtPosition(accelDir * availableTorque, transform.position);
+}
+								</code></pre>
+							  </div>
+							</div>
+						  </div>
+						</div>
+			  
+						<p>And when you combine all these things, you have a working car, and you can change all the values yourself, like how fast it accelerates, the top speed, and how fast it steers.</p>
+					  </div>
 					</div>
 				  </div>
 				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
+			  </section>
 	  
 
 	  <section id="project" class="main style2">
