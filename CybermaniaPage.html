@@ -5,128 +5,240 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Milan Driece</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>.video-container {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
-		  }
-
-		  .youtube-video {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		  }
+<head>
+	<title>Project Page - Milan Driece</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="assets/css/prism.css" />
+	<style>
+		/* Project Section */
+		#project .major {
+		  text-align: center;
+		}
+		
+		#project .project-description {
+		  margin-bottom: 2rem;
+		}
+		
+		#project .youtube-video {
+		  text-align: center;
+		}
+		
+		#project .code-snippets {
+		  text-align: center;
+		  margin-top: 2rem;
+		}
+		
+		#project .snippet-toggle {
+		  display: inline-block;
+		}
 		</style>
 
-	</head>
-	<body class="is-preload">
+		<style>
+			.back-button {
+			  position: fixed;
+			  top: 25px;
+			  left: 25px;
+			  z-index: 9999;
+			}
+		  </style>
 
-		<!-- Header -->
+		<style>
+			.row {
+		  display: flex;
+		  flex-wrap: wrap;
+		}
+		
+		.video-container {
+		  flex: 0 0 20%; /* Adjust the width as needed */
+		}
+		
+		.text-container {
+		  flex: 0 0 50%; /* Adjust the width as needed */
+		  overflow: auto; /* Add overflow property to control long text */
+		}
+		  </style>
+
+		  <style>.image-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		  }
+		  
+		  .image-wrapper img {
+			max-width: 100%;
+			max-height: 100%;
+		  }</style>
+
+		  <style>.image-container {
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+		  }
+		  
+		  .project-gif {
+			max-width: 100%;
+			height: auto;
+		  }
+		  </style>
+		  
+		<style>
+		.image-container {
+			max-width: 100%;
+			display: flex;
+			justify-content: center;
+		  }
+
+		  .achievement-gif {
+			max-width: 100%;
+			height: auto;
+		  }
+		</style>
+		  
+		  <link rel="stylesheet" href="assets/css/main.css" />
+		  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		</head>
+		<body class="is-preload">
+			
+			<!-- Header -->
 			<section id="header">
+				<a href="index.html#three" class="back-button button">Main page</a>
 				<div class="inner">
-					<span class="icon solid major fa-cloud"></span>
-					<h1><strong>Milan Driece</strong>, Game Developent
-					Portfolio </h1>
-					<p>I am an enthusiastic Game developer and have been making games since 2018.<br />
-					Skilled in Unity C#.</p>
+					<span class="icon solid major fa-car"></span>
+					<h1><strong>Cybermania</strong></h1>
+					<p>An online multiplayer racing game.</p>
 					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Discover</a></li>
+						<li><a href="#project" class="button scrolly">Discover</a></li>
 					</ul>
 				</div>
 			</section>
 
-		<!-- One -->
-		<section id="one" class="main style1">
-			<div class="container">
+	<section id="project" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12">
+			  <header class="major text-center">
+				<h2>Introduction</h2>
+			  </header>
+	  
 			  <div class="row gtr-150">
-				<div class="col-6 col-12-medium">
-				  <header class="major">
-					<h2>Compilation video<br /> of all my projects</h2>
-				  </header>
-				  <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+				<div class="col-12 col-md-6">
+				  <div class="project-description">
+					<p>I developed an online multiplayer racing game with three artists and one other developer for a school project. We had to meet several requirements in the first two weeks which where:</p>
+					<ul>
+					  <li>Game Loop:
+						<ul>
+						  <li>Return to main menu</li>
+						  <li>Start the game</li>
+						  <li>Fail or die machanics</li>
+						</ul>
+					  </li>
+					  <li>Main Player: Well-controllable car</li>
+					  <p></p>
+					  <li>User Interface (UI):
+						<ul>
+						  <li>Countdown / Traffic light</li>
+						  <li>Speedometer</li>
+						  <li>Lap time</li>
+						  <li>Fastest lap time</li>
+						  <li>Overview of recorded times</li>
+						  <li>Time trials saving</li>
+						</ul>
+					  </li>
+					</ul>
+					<p>After successfully implementing these features, we had two additional weeks to further enhance the game according to our preferences. The result is showcased here:</p>
 				</div>
-				<div class="col-6 col-12-medium imp-medium">
-				  <div class="video-container">
-					<iframe class="youtube-video"
-					  src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=1&controls=0">
-					</iframe>
+			  </div>
+			  <div class="col-12 col-md-6">
+				<div class="youtube-video text-center" style="margin-bottom: 100px;">
+				  <iframe width="100%" height="630" src="https://www.youtube.com/embed/vhelHmB0gQA?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=vhelHmB0gQA&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+				</div>
+			  </div>
+			</div>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12">
+				  <header class="major text-center">
+					<h2>The Making of Cybermania</h2>
+				  </header>
+				</div>
+			  </div>
+	  
+			  
+			  <div class="row">
+				<div class="col-12">
+				  <div class="code-snippets">
+					<button class="snippet-toggle button scrolly">Show Code</button>
+					<div class="code-block">
+					  <pre><code class="language-csharp">
+	  public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
+	  {
+		LaserIndices.Add(pos);
+	  
+		Ray ray = new Ray(pos, dir);
+		RaycastHit hit;
+	  
+		ChangeColor(CurrentColor);
+	  
+		if (Physics.Raycast(ray, out hit, 30, 1))
+		{
+		  CheckHit(hit, dir, laser);
+		}
+		else
+		{
+		  LaserIndices.Add(ray.GetPoint(30));
+		  UpdateLaser();
+		}
+	  }
+					  </code></pre>
+					</div>
 				  </div>
 				</div>
 			  </div>
 			</div>
-		  </section>
+		  </div>
+		</div>
+	  </section>
 
-		<!-- Two -->
-			<section id="two" class="main style2">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<ul class="major-icons">
-								<li><span class="icon solid style1 major fa-gamepad"></span></li>
-								<li><span class="icon solid style2 major fa-code"></span></li>
-								<li><span class="icon solid style3 major fa-paint-brush"></span></li>
-								<li><span class="icon solid style4 major fa-cogs"></span></li>
-								<li><span class="icon solid style5 major fa-laptop"></span></li>
-								<li><span class="icon solid style6 major fa-terminal"></span></li>
-							</ul>
-						</div>
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>About me:<br /></h2>
-							</header>
-							<p>My name is Milan Driece. I am an enthusiastic, hardworking guy, and I always try my very best. I work at Domino's and CLS. I study game development at Grafisch Lyceum Utrecht. In my free time, I mostly play video games like The Legend of Zelda: Tears of the Kingdom and a lot of first-person shooters. I also enjoy hanging out with family and friends.</p>
-							<p>I have worked with Unity C# for 3 years. I also have experience with Unreal Engine and Unreal Blueprints for about 6 months. I know how to use GitHub to save and collaborate on projects. Additionally, I'm good at editing videos, and I've made all the videos on my YouTube channel myself.</p>
-							<p>I understand the scrum method for managing projects well. I'm good at leading a team and enjoy working with others. I'm also good at recognizing the strengths of my teammates and making sure everyone is happy and having a good time on a project.</p>
-							<p>I'm quick to learn the basics of new things. For example, I learned Unity multiplayer in just a few weeks, and now I understand it well enough to teach others. I really enjoy helping others too.</p>
-						</div>
-					</div>
+	  
+
+	  <section id="project" class="main style2">
+		<div class="container">
+		  <div class="row gtr-150">
+			<div class="col-12">
+			  <header class="major text-center">
+				<h2>Discover Cybermania</h2>
+			  </header>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12 col-md-6">
+				  <div class="project-description">
+					<p></p>
+					<div class="text-center">
+						<a href="https://m1l4n.itch.io/starline" class="button" target="_blank">Download and Play on itch.io</a>
+					  </div>
+				  </div>
 				</div>
-			</section>
-
-		<!-- Three -->
-			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>Project Pages</h2>
-					</header>
-					<p>Here, you can find all my projects and view the ones you like. They all have a short introduction that you can go through. Additionally, they include explanations of what I did and how I made them, along with code snippets and videos.</p>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/Mix Colors Achievement.png" alt="" /></span>
-							<h3>Starline</h3>
-							<p> This is a 3D first-person puzzle game that I made in 8 weeks for school. I am really proud of how this turned out and and we ended up winning the best project of our year! </p>
-							<ul class="actions special">
-								<li><a href="StarlinePage.html" class="button">View Project</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
-							<h3>Cybermania</h3>
-							<p>With a team of five, we crafted an exciting online multiplayer racing game. Our efforts paid off, earning us a perfect 10 - the highest grade! Experience our journey and the final product!</p>
-							<ul class="actions special">
-								<li><a href="CybermaniaPage.html" class="button">View Project</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-					</div>
+				<div class="col-12 col-md-6">
+				  <div class="youtube-video">
+					<iframe width="100%" height="400" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+					<div class="video-caption">Watch the Trailer</div>
+				  </div>
 				</div>
-			</section>
-
+			  </div>
+	  
+			  <div class="row gtr-150">
+				<div class="col-12 text-center">
+				  <p>If you're still not convinced, take a moment to watch the awesome trailer created by our talented artists. It's sure to pique your interest!</p>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
 		<!-- Five -->
 		<!--
 			<section id="five" class="main style1">
@@ -461,7 +573,24 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>	
+
+			<script src="assets/js/prism.js"></script>
+			<style>
+				.code-snippets .code-block {
+				  display: none;
+				}
+				</style>
+				<script>
+				$(document).ready(function() {
+				  $(".snippet-toggle").click(function(event) {
+					event.preventDefault();
+					$(this).toggleClass("active");
+					$(this).siblings(".code-block").slideToggle();
+				  });
+				});
+				</script>
+
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
