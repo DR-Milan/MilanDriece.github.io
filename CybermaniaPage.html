@@ -266,7 +266,7 @@ if (Input.GetAxisRaw("Horizontal") < -0.1f)
 			  
 						<p>The big difference between what I had before and what I have now is that instead of moving the car, I'm moving the wheels.</p>
 			  
-						<p>First, you need to make sure your car has suspension (so that it has springing from top to bottom). This prevents the car from tipping over when forces are applied and also keeps the car up.</p>
+						<p>First, you need to make sure your car has suspension. This prevents the car from tipping over when forces are applied and also keeps the car up.</p>
 			  
 						<div class="row">
 						  <div class="col-12">
@@ -290,8 +290,7 @@ if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 1 + _
 							</div>
 						  </div>
 						</div>
-			  
-						<p>This is the code that adds the suspension.</p>
+			 <p>And then the steering forces have to be applied, so when the wheel turns, the appropriate forces are applied, causing the car to turn and steer. I made sure that the faster you go, the less you can steer, making it more realistic. Otherwise, the car could make a super sharp turn while going at top speed. I achieved this using an animation curve, and it looks like this:</p> 
 			  
 						<div class="row">
 						  <div class="col-12">
@@ -346,7 +345,101 @@ if (Input.GetAxisRaw("Vertical") > 0.0f)
 				  </div>
 				</div>
 			  </section>
-	  
+
+			  <section id="project" class="main style2">
+				<div class="container">
+				  <div class="row gtr-150">
+					<div class="col-12">
+						<h3>Online Multiplayer:</h3>
+					  </header>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p>Of course, a big part of what made this game so exceptional is its online multiplayer feature. With the assistance of Unity Netcode for GameObjects and Unity Relay, I eventually achieved success. Let me take you through the journey of creating this game with multiplayer functionality.</p>
+			  
+						<p>To implement multiplayer capabilities, various services like Photon, Mirror, and Netcode for GameObjects are available. Due to my experience with it, I chose Netcode for GameObjects, even though there were limited tutorials, which led me to explore and learn a lot on my own.</p>
+			  
+						<p>After deciding to use Unity Netcode for GameObjects, I began by implementing the necessary network manager. I had to provide a client network transform to the objects I wanted to synchronize with the server, which, in this case, was solely the car, as no other object needed movement synchronization within the scene.</p>
+			  
+						<p>I intentionally disabled synchronization for the scale, as it did not require synchronization.</p>
+			  
+						<p>However, making multiplayer functional required additional adjustments since, without them, all players could move any car in the game. So, I had to add a few things to the code.</p>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="code-snippets">
+						<button class="snippet-toggle button scrolly">Show multiplayer example Code</button>
+						<div class="code-block">
+						  <pre><code class="language-csharp">
+// First, you need to use Unity Netcode to access the netcode functionalities.
+using Unity.Netcode;
+
+// Then, instead of inheriting from MonoBehaviour, you should inherit from NetworkBehaviour.
+public class NetcodeExplanesion : NetworkBehaviour
+{
+	  // Lastly, you need to ensure that if you don't want others to execute your code, 
+	  // check if your object is the owner.
+	  private void Update()
+	  { 
+		  if (!IsOwner) return;
+	  }
+}
+						  </code></pre>
+						</div>
+					  </div>
+					</div>
+				  </div>
+
+				  <p>I also wanted players to have personalized names, so they could easily identify each other in the game. To achieve this, I used a NetworkVariable, which is a variable that can be synchronized over the network, but it cannot hold null values. This posed a challenge because I usually use strings for names, but they can be null. After researching, I discovered the FixedString128Bytes, which is essentially a string with a maximum of 128 characters, and it can never be null.</p>
+
+				  <div class="row">
+					<div class="col-12">
+					  <div class="code-snippets">
+						<button class="snippet-toggle button scrolly">Show Player names Code</button>
+						<div class="code-block">
+						  <pre><code class="language-csharp">
+// To create player overhead displays with personalized names, I used Unity.Netcode.
+using Unity.Netcode;
+using Unity.Collections;
+
+public class PlayerOverheadDisplay : NetworkBehaviour
+{
+	  [SerializeField] private NetworkVariable<FixedString128Bytes> _displayName = new NetworkVariable<FixedString128Bytes>("", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+
+	  private void Update()
+	  {
+		  // Check if the player is the owner before changing the display name.
+		  if (IsOwner)
+			  _displayName.Value = _multiplayerManager._nameInputfield.text;
+
+		  // Set the display name text to the value of the FixedString128Bytes.
+		  _displayNameText.text = _displayName.Value.ToString();
+	  }
+}
+						  </code></pre>
+						</div>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						  <p>Additionally, to create personalized player overhead displays with customized names, I utilized Unity.Netcode. By using the NetworkVariable with FixedString128Bytes, I ensured that players' names could be synchronized over the network without any issues. When a player updates their name in the name input field, it is reflected across the server, allowing others to see their chosen name displayed above their cars in the game.</p>
+
+						  <p>Upon implementing all these crucial components, the multiplayer functionality was already operational in terms of code. The final step was enabling players to connect and play together via a server. This was achieved using a Unity service called Relay. As a result, players can either create or join a game. If they create a game, they receive a code that others can use to join and participate in the multiplayer experience.</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
+
 
 	  <section id="project" class="main style2">
 		<div class="container">
