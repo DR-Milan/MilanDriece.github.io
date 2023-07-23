@@ -5,43 +5,90 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Milan Driece</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>.video-container {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
-		  }
+<head>
+	<title>Milan Driece</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>.video-container {
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%; /* 16:9 aspect ratio (height/width) */
+	  }
 
-		  .youtube-video {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-		  }
-		</style>
+	  .youtube-video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	  }
+	</style>
+	
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-	</head>
-	<body class="is-preload">
+	<script>
+		// Function to get a random icon from an array of icons
+		function getRandomIcon() {
+		  const icons = [
+		  			'gamepad',        // Gamepad icon from Font Awesome
+					'code',           // Code icon from Font Awesome
+					'keyboard',       // Keyboard icon from Font Awesome
+					'cog',            // Cog icon from Font Awesome
+					'rocket',         // Rocket icon from Font Awesome
+					'brain',          // Brain icon from Font Awesome
+					'robot',          // Robot icon from Font Awesome
+					'lightbulb',      // Lightbulb icon from Font Awesome
+					'code-branch',    // Code Branch icon from Font Awesome
+					'microchip',      // Microchip icon from Font Awesome
+					'paint-brush',    // Paint Brush icon from Font Awesome
+					'gamepad-alt',    // Alternate Gamepad icon from Font Awesome
+					'cube',           // Cube icon from Font Awesome
+					'hammer',         // Hammer icon from Font Awesome
+					'globe',          // Globe icon from Font Awesome
+					'palette',        // Palette icon from Font Awesome
+					'lightbulb-on',   // Lightbulb On icon from Font Awesome
+					'tools',          // Tools icon from Font Awesome
+					'gamepad',        // Gamepad icon from Font Awesome
+					'joystick',       // Joystick icon from Font Awesome
+					'dice',           // Dice icon from Font Awesome
+					'game-board',     // Game Board icon from Font Awesome
+					'gamepad-alt',    // Alternate Gamepad icon from Font Awesome
+					// Add more icons as needed
+			// Add more icons as needed
+		  ];
+		  return icons[Math.floor(Math.random() * icons.length)];
+		}
 
-		<!-- Header -->
-			<section id="header">
-				<div class="inner">
-					<span class="icon solid major fa-cloud"></span>
-					<h1><strong>Milan Driece</strong>, Game Developent
-					Portfolio </h1>
-					<p>I am an enthusiastic Game developer and have been making games since 2018.<br />
-					Skilled in Unity C#.</p>
-					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Discover</a></li>
-					</ul>
-				</div>
-			</section>
+		// Function to set the random icon
+		function setRandomIcon() {
+		  const iconElement = document.querySelector('.icon.major');
+		  iconElement.classList.remove('fa-gamepad'); // Remove the default gamepad icon class
+		  iconElement.classList.add('fa-' + getRandomIcon()); // Add the random icon class
+		}
+
+		// On page load or reload, call the function to set the random icon
+		document.addEventListener('DOMContentLoaded', setRandomIcon);
+		window.addEventListener('load', setRandomIcon);
+	</script>
+</head>
+<body class="is-preload">
+
+	<!-- Header -->
+	<section id="header">
+		<div class="inner">
+			<span class="icon solid major fa-gamepad"></span>
+			<h1><strong>Milan Driece</strong>, Game Developent
+			Portfolio </h1>
+			<p>I am an enthusiastic Game developer and have been making games since 2018.<br />
+			Skilled in Unity C#.</p>
+			<ul class="actions special">
+				<li><a href="#one" class="button scrolly">Discover</a></li>
+			</ul>
+		</div>
+	</section>
 
 		<!-- One -->
 		<section id="one" class="main style1">
@@ -460,6 +507,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</section>
 
 		<!-- Scripts -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
