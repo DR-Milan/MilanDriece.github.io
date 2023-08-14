@@ -171,46 +171,52 @@
 				</div>
 			  </div>
 	  
-			  <div class="row gtr-150">
-				<div class="col-12">
+				<div class="row gtr-150">
+				  <div class="col-12">
 					<h3>Casting Boulders</h3>
+				  </div>
 				</div>
-			  </div>
-				<div class="col-12 text-container">
-				  <p>As you can see in the technical design I challanged myself to make a solid script that could handle all the boulders that I wanted to be cast.</p>
-				  <p></p>
-				</div>
-			  </div>
-	  
-			  <div class="row">
-				<div class="col-12">
-				  <div class="code-snippets">
-					<button class="snippet-toggle button scrolly">Show Code</button>
-					<div class="code-block">
-					  <pre><code class="language-csharp">
-	  public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
-	  {
-		LaserIndices.Add(pos);
-	  
-		Ray ray = new Ray(pos, dir);
-		RaycastHit hit;
-	  
-		ChangeColor(CurrentColor);
-	  
-		if (Physics.Raycast(ray, out hit, 30, 1))
-		{
-		  CheckHit(hit, dir, laser);
-		}
-		else
-		{
-		  LaserIndices.Add(ray.GetPoint(30));
-		  UpdateLaser();
-		}
-	  }
-					  </code></pre>
+				<div class="row">
+					<div class="col-12">
+					  <div class="text-container text-center">
+						<p>As you can see in the technical design, I challenged myself to create a solid script that could handle all the boulders I wanted to cast. To achieve this, I created a function that, when called, goes through all the necessary steps to spawn a boulder. First, it spawns the actual boulder, then it adds it to a list in the GameManager, which is used for cleanup if the game were to end. After that, it applies the necessary forces, and finally, it returns the boulder, completing the casting process.</p>
+					  </div>
+					</div>
+				  </div>
+			
+				<div class="row">
+				  <div class="col-12 text-center">
+					<div class="code-snippets">
+					  <button class="snippet-toggle button scrolly">Show Code</button>
+					  <div class="code-block">
+						<pre><code class="language-csharp">
+/// &lt;summary&gt;
+/// Spawns a stone and adds an upwards force but also has a different casting position. Returns the stone that it spawned so that it can be used in other code.
+/// &lt;/summary&gt;
+/// &lt;param name="stoneToCast"&gt;The stone object that needs to be casted.&lt;/param&gt;
+/// &lt;param name="castingForce"&gt;The force that the stone needs to be lifted upwards.&lt;/param&gt;
+/// &lt;param name="castingPos"&gt;The position the stone needs to be casted at&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+public GameObject CastStones(GameObject stoneToCast, float castingForce, Transform castingPos)
+{
+  //Spawns stone and adds it to the list of stones.
+  GameObject stone = Instantiate(stoneToCast, castingPos.position, castingPos.rotation);
+  GameManager.Instance.Stones.Add(stone);
+  Rigidbody2D rb = stone.GetComponent&lt;Rigidbody2D&gt;();
+  //Add an upwards velocity.
+  rb.velocity = new Vector2(rb.velocity.x, castingForce);
+  //Returns the stone object.
+  return stone;
+}
+						</code></pre>
+					  </div>
 					</div>
 				  </div>
 				</div>
+			  </div>
+			</section>
+			  
+			  
 			  </div>
 			</div>
 		  </div>
