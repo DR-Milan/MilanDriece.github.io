@@ -25,6 +25,35 @@
 		height: 100%;
 	  }
 	</style>
+
+	<style>.project-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	
+	.project-item {
+		flex: 0 0 calc(33.33% - 30px); /* Adjust the width as needed */
+		margin-bottom: 30px;
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.project-content {
+		flex: 1;
+	}
+	
+	.project-description {
+		flex: 1;
+		margin-bottom: 10px; /* Add some space between description and button */
+		overflow: hidden;
+	}
+	
+	.actions {
+		display: flex;
+		justify-content: center; /* Center the button vertically */
+		align-items: flex-end; /* Align the button at the bottom */
+	}</style>
 	
 	<!-- Font Awesome CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -75,7 +104,6 @@
 	</script>
 </head>
 <body class="is-preload">
-
 	<!-- Header -->
 	<section id="header">
 		<div class="inner">
@@ -139,40 +167,89 @@
 			</section>
 
 		<!-- Three -->
-			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>Project Pages</h2>
-					</header>
-					<p>Here, you can find all my projects and view the ones you like. They all have a short introduction that you can go through. Additionally, they include explanations of what I did and how I made them, along with code snippets and videos.</p>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
+		<section id="three" class="main style1 special">
+			<div class="container">
+				<header class="major">
+					<h2>Project Pages</h2>
+				</header>
+				<p>Here, you can find all my projects and view the ones you like. They all have a short introduction that you can go through. Additionally, they include explanations of what I did and how I made them, along with code snippets and videos.</p>
+				<div class="row gtr-150 project-container">
+
+					<!-- Starline -->
+					<div class="col-4 col-12-medium project-item">
+						<div class="project-content">
 							<span class="image fit"><img src="images/Mix Colors Achievement.png" alt="" /></span>
 							<h3>Starline</h3>
-							<p> This is a 3D first-person puzzle game that I made in 8 weeks for school. I am really proud of how this turned out and and we ended up winning the best project of our year! </p>
-							<ul class="actions special">
-								<li><a href="StarlinePage.html" class="button">View Project</a></li>
-							</ul>
+							<p class="project-description">This is a 3D first-person puzzle game that I made in 8 weeks for school. I am really proud of how this turned out and we ended up winning the best project of our year!</p>
 						</div>
-						<div class="col-4 col-12-medium">
+						<ul class="actions special">
+							<li><a href="StarlinePage.html" class="button">View Project</a></li>
+						</ul>
+					</div>
+
+					<!-- Cybermania -->
+					<div class="col-4 col-12-medium project-item">
+						<div class="project-content">
 							<span class="image fit"><img src="images/Cybermania poster.jpg" alt="" /></span>
 							<h3>Cybermania</h3>
-							<p>With a team of five, we crafted an exciting online multiplayer racing game. Our efforts paid off, earning us a perfect 10 - the highest grade! Experience our journey and the final product!</p>
-							<ul class="actions special">
-								<li><a href="CybermaniaPage.html" class="button">View Project</a></li>
-							</ul>
+							<p class="project-description">With a team of five, we crafted an exciting online multiplayer racing game. Our efforts paid off, earning us a perfect 10 - the highest grade! Experience our journey and the final product!</p>
 						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="BoulderBrawlPage.html" class="button">View Project</a></li>
-							</ul>
-						</div>
+						<ul class="actions special">
+							<li><a href="CybermaniaPage.html" class="button">View Project</a></li>
+						</ul>
 					</div>
+
+					<!-- Boulder Brawl -->
+					<div class="col-4 col-12-medium project-item">
+						<div class="project-content">
+							<span class="image fit"><img src="images/BoulderBrawlCover.png" alt="" /></span>
+							<h3>Boulder Brawl</h3>
+							<p class="project-description">I developed a 2D fighting game for a school project, featuring earthbending combat mechanics and local multiplayer. I also made a technical design before making the game.</p>
+						</div>
+						<ul class="actions special">
+							<li><a href="BoulderBrawlPage.html" class="button">View Project</a></li>
+						</ul>
+					</div>
+					
+					<!-- Comming -->
+					<div class="col-4 col-12-medium project-item">
+						<div class="project-content">
+							<span class="image fit"><img src="images/Mix Colors Achievement.png" alt="" /></span>
+							<h3>Starline</h3>
+							<p class="project-description">This is a 3D first-person puzzle game that I made in 8 weeks for school. I am really proud of how this turned out and we ended up winning the best project of our year!</p>
+						</div>
+						<ul class="actions special">
+							<li><a href="StarlinePage.html" class="button">View Project</a></li>
+						</ul>
+					</div>
+
+					<!-- Comming -->
+					<div class="col-4 col-12-medium project-item">
+						<div class="project-content">
+							<span class="image fit"><img src="images/Cybermania poster.jpg" alt="" /></span>
+							<h3>Cybermania</h3>
+							<p class="project-description">With a team of five, we crafted an exciting online multiplayer racing game. Our efforts paid off, earning us a perfect 10 - the highest grade! Experience our journey and the final product!</p>
+						</div>
+						<ul class="actions special">
+							<li><a href="CybermaniaPage.html" class="button">View Project</a></li>
+						</ul>
+					</div>
+
+					<!-- Comming -->
+					<div class="col-4 col-12-medium project-item">
+						<div class="project-content">
+							<span class="image fit"><img src="images/BoulderBrawlCover.png" alt="" /></span>
+							<h3>Boulder Brawl</h3>
+							<p class="project-description">I developed a 2D fighting game for a school project, featuring earthbending combat mechanics and local multiplayer. I also made a technical design before making the game.</p>
+						</div>
+						<ul class="actions special">
+							<li><a href="BoulderBrawlPage.html" class="button">View Project</a></li>
+						</ul>
+					</div>
+
 				</div>
-			</section>
+			</div>
+		</section>
 
 		<!-- Five -->
 		<!--
@@ -492,19 +569,22 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</section>
 		-->
 
-		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</section>
+	<!-- Footer -->
+	<section id="footer">
+	    <ul class="icons">
+	        <li><a href="https://www.youtube.com/@Milanyd_/videos" class="icon brands alt fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+	        <li><a href="https://www.facebook.com/milan.driece" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+	        <li><a href="https://www.instagram.com/milanyd_/" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+	        <li><a href="https://github.com/DR-Milan" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+	        <li><a href="mailto:milandriece2005@gmail.com" class="icon solid alt fa-envelope" target="_blank"><span class="label">Email</span></a></li>
+	    </ul>
+	    <p></p>
+	    <p>Zuid-Holland, Zuidplas, Zevenhuizen.</p>
+	    <ul class="copyright">
+	        <li>&copy; Milan Driece</li>
+	        <li>Design: HTML5 UP</li>
+	    </ul>
+	</section>
 
 		<!-- Scripts -->
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
