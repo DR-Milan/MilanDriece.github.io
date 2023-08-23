@@ -212,6 +212,46 @@ public class WeaponAttack : MonoBehaviour
 						  </div>
 						</div>
 						<p>I can easily use this script for future weapons that need to be able to attack.</p>
+						<p>In this game, you can also pick up weapons and switch from one to another. So, I made a weapon manager script with a variable that checks all the currently unlocked weapons. To pick up a weapon, I just check if the weapon hasn't been picked up yet and then add it to the 'unlockedWeapon' variable. For weapon switching, I simply activate the new weapon and deactivate the current one.</p>
+
+						<div class="row">
+							<div class="col-12">
+							  <div class="code-snippets">
+								<button class="snippet-toggle button scrolly">Show Code</button>
+								<div class="code-block">
+								  <pre><code class="language-csharp">
+private void OnTriggerEnter(Collider other)
+{
+	if (other.CompareTag("Player"))
+	{
+		WeaponManager weaponManager = other.GetComponentInParent&lt;WeaponManager&gt;();
+		for (int i = 0; i < weaponManager._unlockedWeapons.Count; i++)
+		{
+			if (weaponManager._unlockedWeapons[i] == weaponManager._allWeapons[weaponUnlock].GetComponent&lt;Animator&gt;()) return;
+		}
+		weaponManager._unlockedWeapons.Add(weaponManager._allWeapons[weaponUnlock].GetComponent&lt;Animator&gt;());
+
+		//Makes sure the present gets detroyed if picked up.
+		GetComponentInParent&lt;DropPresent&gt;().PickedUpObject();
+		Destroy(gameObject);
+	}
+}
+								  </code></pre>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						  <h3>Health system:</h3>
+  <p>I also created a health system for this game, but it is almost exactly the same system that I use in my Boulder Brawl game, which you can see <a href="BoulderBrawlPage.html" id="healthLink">here</a>.</p>
+
+  <script>
+    // Function to scroll to the specific section when the link is clicked
+    document.getElementById("healthLink").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      // Navigate to the BoulderBrawlPage.html file
+      window.location.href = "BoulderBrawlPage.html#health";
+    });
+  </script>
 					  </div>
 					</div>
 				  </div>
@@ -231,14 +271,14 @@ public class WeaponAttack : MonoBehaviour
 				  <div class="project-description">
 					<p></p>
 					<div class="text-center">
-						<a href="https://m1l4n.itch.io/cybermania" class="button" target="_blank">Download and Play on itch.io</a>
+						<a href="https://m1l4n.itch.io/christmas-fight" class="button" target="_blank">Download and Play on itch.io</a>
 					  </div>
 				  </div>
 				</div>
 				<div class="col-12 col-md-6">
 				  <div class="youtube-video">
-					<iframe width="100%" height="630" src="https://www.youtube.com/embed/vhelHmB0gQA?autoplay=0&controls=1&showinfo=1&rel=0&loop=1&playlist=vhelHmB0gQA&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-					<div class="video-caption">Watch another video of cybermania</div>
+					<iframe width="100%" height="630" src="https://www.youtube.com/embed/mDCkP034cdc?autoplay=0&controls=1&showinfo=1&rel=0&loop=1&playlist=mDCkP034cdc&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+					<div class="video-caption">New video comming soon...</div>
 				  </div>
 				</div>
 			  </div>
