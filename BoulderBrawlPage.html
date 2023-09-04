@@ -109,18 +109,21 @@
 		  }
 		  </style>
 		  
-		<style>
-		.image-container {
-			max-width: 100%;
-			display: flex;
-			justify-content: center;
+		  <style>.image-container {
+			display: flex; /* Use flexbox to display images side by side */
+			justify-content: space-between; /* Space them evenly horizontally */
+			align-items: center; /* Center them vertically */
+			margin-bottom: 20px; /* Add some spacing below the images */
 		  }
+		  
+		  .left-image {
+			max-width: 100%; /* Adjust the size of the left image as needed */
+		  }
+		  
+		  .right-image {
+			max-width: 91.7%; /* Ensure the right image retains its original size */
+		  }</style>
 
-		  .achievement-gif {
-			max-width: 100%;
-			height: auto;
-		  }
-		</style>
 		  
 		  <link rel="stylesheet" href="assets/css/main.css" />
 		  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -334,15 +337,30 @@ private void DestroyOnImpact()
 		  </div>
 		</div>
 	  </section>
-
 	  <section id="PixelArt" class="main style2">
 		<div class="container">
 		  <div class="row gtr-150">
 			<div class="col-12 text-center">
-			  <h3>Game-Art</h3>
-			  <p>As part of this project, I had to learn Maya and create 3D models for my game. But not only did I make the 3D models, I also made a lot of the pixel art like the character.</p>
+			  <h3>Game Art</h3>
+			  <p>As part of this project, I had to learn Maya and create 3D models for my game. But not only did I make the 3D models, I also created a lot of pixel art for the characters.</p>
 			  
-			  <p>I created the character in Aseprite. And for the animation I used a sprite sheet as you can see in the image below. As you can see i'm not the best artist but I still really liked how it turned out in the final game.</p>
+			  <p>I wanted to make a pixel art game, but the project required that you model and texture at least one object in your game. So, I had to improvise, and the way I did that was by having two cameras. One camera is for the player and all the actual pixel art. The other camera is a bit special because it has a render texture with a very low pixel size, which gives the game this really cool effect where it looks pixelated.</p>
+			  
+			  <div class="image-container">
+				<div class="image-with-text">
+				  <img src="images/BoulderModels.png" alt="Pixel Art Image" class="left-image">
+				  <p>These were all the boulder models I made in Maya.</p>
+				</div>
+				<div class="image-with-text">
+				  <img src="images/BoulderbrawlPixelArt.png" alt="Pixel Art Image" class="right-image">
+				  <p>And this is how the game looks with the camera pixel art effect.</p>
+				</div>
+			  </div>
+			  
+			  <p></p>
+			  
+			  <p>I created the character in Aseprite, and for the animation, I used a sprite sheets as you can see in the image below. I'm not the best artist, but I still really liked how it turned out in the final game.</p>
+			  
 			  <img src="images/BoulderBrawlSpriteSheet.png" alt="Pixel Art Image" style="max-width: 100%; height: auto;">
 			</div>
 		  </div>
