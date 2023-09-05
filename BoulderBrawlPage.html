@@ -314,14 +314,14 @@ private float _impactDamage;
 
 private void OnTriggerEnter(Collider collision)
 {
-	  if (collision.gameObject.TryGetComponent<IDamagable>(out IDamagable other))
+	  if (collision.gameObject.TryGetComponent&lt;IDamagable&gt;(out IDamagable other))
 	  {
 		  other.TakeDamage(_impactDamage);
 
 		  DestroyOnImpact();
 	  }
 
-	  if (collision.gameObject.GetComponent<IDamagable>() == null)
+	  if (collision.gameObject.GetComponent&lt;IDamagable&gt;() == null)
 		  DestroyOnImpact();
 }
 
@@ -367,7 +367,7 @@ private void DestroyOnImpact()
 		</div>
 	  </section>
 
-	  <section id="project" class="main style2">
+	  <section id="project" class="main style1">
 		<div class="container">
 		  <div class="row gtr-150">
 			<div class="col-12">
@@ -384,22 +384,6 @@ private void DestroyOnImpact()
 					  </div>
 				  </div>
 				</div>
-				<div class="col-12 col-md-6">
-				  <div class="youtube-video">
-					<iframe width="100%" height="400" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-					<div class="video-caption">Watch the Trailer</div>
-				  </div>
-				</div>
-			  </div>
-	  
-			  <div class="row gtr-150">
-				<div class="col-12 text-center">
-				  <p>If you're still not convinced, take a moment to watch the awesome trailer created by our talented artists. It's sure to pique your interest!</p>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
 	  </section>
 		<!-- Five -->
 		<!--

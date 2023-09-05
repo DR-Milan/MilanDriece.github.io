@@ -45,73 +45,37 @@
 			}
 		  </style>
 
-<style>
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .video-container {
-        flex: 0 0 50%; /* Adjust the width as needed */
-    }
-
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 aspect ratio (change as needed) */
-        height: 0;
-        overflow: hidden;
-    }
-
-    .video-wrapper video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .text-container {
-        flex: 0 0 50%; /* Adjust the width as needed */
-        overflow: auto; /* Add overflow property to control long text */
-    }
-</style>
-
-		  <style>.image-wrapper {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100%;
-		  }
-		  
-		  .image-wrapper img {
-			max-width: 100%;
-			max-height: 100%;
-		  }</style>
-
-		  <style>.image-container {
-			max-width: 100%;
-			display: flex;
-			justify-content: center;
-		  }
-		  
-		  .project-gif {
-			max-width: 100%;
-			height: auto;
-		  }
-		  </style>
-		  
 		<style>
-		.image-container {
-			max-width: 100%;
-			display: flex;
-			justify-content: center;
-		  }
+			.row {
+		  display: flex;
+		  flex-wrap: wrap;
+		}
+		
+		.video-container {
+		  flex: 0 0 20%; /* Adjust the width as needed */
+		}
+		
+		.text-container {
+		  flex: 0 0 50%; /* Adjust the width as needed */
+		  overflow: auto; /* Add overflow property to control long text */
+		}
+		  </style>
 
-		  .achievement-gif {
-			max-width: 100%;
-			height: auto;
-		  }
-		</style>
+		      <style>
+				/* Add CSS to center text and images */
+				#MalagaPictures {
+					text-align: center;
+				}
+		
+				.malaga-description {
+					text-align: center;
+				}
+		
+				.malaga-image {
+					display: block;
+					margin: 0 auto;
+				}
+			</style>
 		  
 		  <link rel="stylesheet" href="assets/css/main.css" />
 		  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -122,375 +86,286 @@
 			<section id="header">
 				<a href="index.html#three" class="back-button button">Main page</a>
 				<div class="inner">
-					<span class="icon solid major fa-star"></span>
-					<h1><strong>Starline</strong></h1>
-					<p>A 3D first-person puzzle game.</p>
+					<span class="icon solid major fa-plane"></span>
+					<h1><strong>Malaga</strong></h1>
+					<p>My experience on a school trip to Malaga.</p>
 					<ul class="actions special">
-				<li><a href="#project" class="button scrolly">Discover</a></li>
-			</ul>
-		</div>
-	</section>
+						<li><a href="#project" class="button scrolly">Discover</a></li>
+					</ul>
+				</div>
+			</section>
 
-	<section id="project" class="main style2">
-		<div class="container">
-		  <div class="row gtr-150">
-			<div class="col-12">
-			  <header class="major text-center">
-				<h2>Introduction</h2>
-			  </header>
-	  
-			  <div class="row gtr-150">
-				<div class="col-12 col-md-6">
-				  <div class="project-description">
-					<p>This game was created as a school project within a team of 4 artists and 2 developers over a span of 8 weeks. We had to make a first-person puzzle game with a few conditions:</p>
-					<ol>
-					  <li>The game must have 3 levels.</li>
-					  <li>Each level is referred to as a "cell" and must not exceed 20 meters in length, width, or height (20x20x20 meters).</li>
-					  <li>You must solve the first cell before advancing to the next. So you can't go from cell to cell without completing them.</li>
-					  <li>The game needs to have one mechanic that keeps coming back every level.</li>
-					</ol>
-					<p>Here is the final product we created:</p>
-				  </div>
-				</div>
-				<div class="col-12 col-md-6">
-				  <div class="youtube-video text-center" style="margin-bottom: 100px;">
-					<iframe width="100%" height="630" src="https://www.youtube.com/embed/k1rE3_tl4VA?autoplay=0&controls=1&showinfo=1&rel=0&loop=1&playlist=k1rE3_tl4VA&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-				  </div>
-				</div>
-			  </div>
-	  
-			  <div class="row gtr-150">
-				<div class="col-12">
-				  <header class="major text-center">
-					<h2>The Making of Starline</h2>
-				  </header>
-				</div>
-			  </div>
-	  
+
 			  
-			  <div class="row gtr-150">
-				  <div class="col-12 col-md-6">
+			  
+			<section id="project" class="main style2">
+				<div class="container">
+				  <!-- Introduction section -->
+				  <div class="row gtr-150">
+					<div class="col-12">
+					  <header class="major text-center">
+						<h2>Introduction</h2>
+					  </header>
+					</div>
+				  </div>
+			  
+				  <div class="row gtr-150">
+					<div class="col-12 col-md-6">
 					  <div class="project-description">
-						  <p>We made a whole dev commentary video containing 18 minutes of a full walk through of the game with commentary talking about why we made things and how. If you are really interested in this project and want to know everything I suggest you watch it. (Disclaimer: it is in Dutch)</p>
-						  <div style="display: flex; justify-content: center;">
-							<iframe width="60%" height="400" src="https://www.youtube.com/embed/s1jWWrXSBKQ?autoplay=0&controls=1&showinfo=1&rel=0&loop=1&playlist=s1jWWrXSBKQ&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-						</div>
+						<p>In school, we had the opportunity to sign up for a trip to Malaga. If you decided to go, you could work on your games and various other assignments there. When I heard about this, I was immediately enthusiastic, and I signed up right away. Unfortunately, only two people from my class could go, so it was very exciting to see if I would be selected. And when I received the news that I was going along with a good friend of mine, I was really super happy!</p>
+					  </div>
 					</div>
-				</div>
-			</div>
-			
-			<div class="row gtr-150">
-			  <div class="col-12">
-				  <h3>Beginnings</h3>
-			  </div>
-			</div>
-			  <div class="row gtr-150">
-				<div class="col-12 col-md-6">
-				  <div class="project-description">
-					<p>At first, we were really struggling with the puzzles we wanted to create, and we didn't have a clear idea of the main mechanic we wanted to incorporate. So we made a bunch of different puzzles with different mechanics, and I ended up making this laser prototype which you can see in the video:</p>
 				  </div>
-				</div>
-			  </div>
-	  
-			  <div class="row">
-				<div class="col-12 video-container">
-					<div class="video-wrapper">
-						<video width="100%" height="100%" controls muted loop preload="auto">
-							<source src="images/Light_Reflection_and_colour_Demo.mp4" type="video/mp4">
-							Your browser does not support the video tag.
-						</video>
+			  
+				  <!-- Malaga Game jam section -->
+				  <div class="row gtr-150">
+					<div class="col-12">
+					  <header class="major text-center">
+						<h2>Malaga Game jam:</h2>
+					  </header>
 					</div>
-				</div>
-				<div class="col-12 text-container">
-					<p>As you can see in the video, the lasers react to mirrors and change colors if they are hit by other lasers.</p>
-					<p>The laser was created in two parts: the visual aspect and what happens behind the scenes. To make the laser function as intended, I utilized raycasting, as you can see in the code snippet below. Additionally, each laser was equipped with a LineRenderer, with its positions dynamically added through code.</p>
-				</div>
-			</div>
-	  
-			  <div class="row">
-				<div class="col-12">
-				  <div class="code-snippets">
-					<button class="snippet-toggle button scrolly">Show Code</button>
-					<div class="code-block">
-					  <pre><code class="language-csharp">
-	  public void CastRay(Vector3 pos, Vector3 dir, LineRenderer laser)
+				  </div>
+				  <div class="row">
+					<div class="col-12">
+					  <!-- Image with CSS for formatting -->
+					  <img src="images/MalagaJam.png" alt="Building with buckets" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<h3>Introduction:</h3>
+						<p>Part of the trip to Malaga was participating in the Malaga Game Jam, which is part of the Global Game Jam. I was in a group with another student who was also on the trip, so it was just the two of us and no artist. The theme of the game jam was "Roots," and we had two days (48 hours) to build a game around that theme.</p>
+						<p>In this video you can take a look at the final product we created, and we ended up calling the game Waveline.</p>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12 col-md-6">
+					  <div class="youtube-video text-center" style="margin-bottom: 100px;">
+						<iframe width="100%" height="630" src="https://www.youtube.com/embed/1qaM3FNEB2U?autoplay=0&controls=1&showinfo=1&rel=0&loop=1&playlist=1qaM3FNEB2U&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<h3>The making of Waveline:</h3>
+						<p>The idea of the game is that you are attached to a garden hose, which is the root of our game. You have to complete various mini challenges to obtain extra hose length so that you can ultimately save the world. We didn't have an artist on our team, so we mainly had to rely on ready-made assets. Fortunately, we had received a nice asset pack from school in the past, and we used it for the project.</p>
+						<p>In this project, I primarily worked on making the garden hose spray water and perform mini challenges. I achieved this by inheriting a script.</p>
+						<div class="row">
+						  <div class="col-12">
+							<div class="code-snippets">
+							  <button class="snippet-toggle button scrolly">Show Code</button>
+							  <div class="code-block">
+								<pre><code class="language-csharp">
+public class WaterInteractable : MonoBehaviour
+{
+	  /// &lt;summary&gt;
+	  /// Gets called when water touches the base object with the script WaterContainer.
+	  /// &lt;/summary&gt;
+	  /// &lt;param name="fillAmount"&gt;The amount of water you receive when the function is called&lt;/param&gt;
+	  public virtual void InteractWater(float fillAmount)
 	  {
-		LaserIndices.Add(pos);
-	  
-		Ray ray = new Ray(pos, dir);
-		RaycastHit hit;
-	  
-		ChangeColor(CurrentColor);
-	  
-		if (Physics.Raycast(ray, out hit, 30, 1))
-		{
-		  CheckHit(hit, dir, laser);
-		}
-		else
-		{
-		  LaserIndices.Add(ray.GetPoint(30));
-		  UpdateLaser();
-		}
+
 	  }
-					  </code></pre>
+}
+								</code></pre>
+							  </div>
+							</div>
+						  </div>
+						</div>
+						<p>The first snippet defines a class `WaterInteractable` with a method `InteractWater(float fillAmount)` for handling water interactions in the game.</p>
+						<p>The second snippet is an override of the `InteractWater` method, adding water to a container in the game, respecting a maximum fill limit.</p>
+					  </div>
 					</div>
 				  </div>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
-	  <section id="project" class="main style2">
-		<div class="container">
-		  <div class="row gtr-150">
-			<div class="col-12 text-center">
-			  <h3>The lasers mixing colors</h3>
-			  <p>Eventually, we decided that lasers would be the main mechanic for the game. But we would change the way you interact with the laser, so now you can go into the laser and control it like a camera. Since I made the laser, and it's kind of the bread and butter of our project, I will explain how everything works in more detail.</p>
-			  <p>When a laser hits another laser, the colors start to mix. The code begins a function that takes both colors and returns the blended color. Then, the mixed color is given to a function called ChangeColor.</p>
-			</div>
-		  </div>
-  
-	  <div class="row">
-		<div class="col-12 text-center">
-		  <div class="code-snippets">
-			<div class="row">
-			  <div class="col-12 text-center">
-				<span class="image fit"><img src="images/LaserChangingColor.png" alt="" /></span>
-			  </div>
-			</div>
-			<button class="snippet-toggle button scrolly">Show Code</button>
-			<div class="code-block">
-			  <pre><code class="language-csharp">
-  if (colliderTag == "LightShooter")
-  {
-	CurrentColor = OriginalColor;
-  
-	ShootLazer shootLazer = colliderObject.GetComponentInChildren<ShootLazer>();
-	shootLazer.Lazerbeam.m_mixColors = true;
-  
-	Color mixedColor = MixColors(CurrentColor, shootLazer.Lazerbeam.OriginalColor);
-	shootLazer.Lazerbeam.ChangeColor(mixedColor);
-  
-	AddPointAndUpdateLaser(hitInfo.point);
-  }
-			  </code></pre>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</section>
-
-	<section id="project" class="main style2">
-		<div class="container">
-			<div class="row gtr-150">
-				<div class="col-12 text-center">
-					<h3>ChangeColor Function Explained</h3>
-					<p>The ChangeColor function plays a crucial role in our project and has evolved through multiple phases of development. Initially, I attempted to directly change the color of the line renderer and the laser to the blended color. However, this approach resulted in various issues and inconsistent behavior.</p>
-					<p>To resolve these problems, I introduced two variables called OriginalColor and CurrentColor. By carefully adjusting and fine-tuning the code, I was able to ensure that the function consistently and accurately performed its intended task.</p>
-					<p>Later, I received valuable feedback from a teacher who suggested that the colors were not distinct enough. To address this concern, I made further modifications to the code. I created a list of materials that our artist could customize to their preferences, allowing for more flexibility in color selection.</p>
-					<p>The code now dynamically selects the material that best matches the desired color for the laser by calculating the closest distance between colors. This ensures a more visually appealing and clearly distinguishable laser beam.</p>
-				</div>
-			</div>
-	
-			<div class="row">
-				<div class="col-12 text-center">
-					<div class="code-snippets">
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="code-snippets">
 						<button class="snippet-toggle button scrolly">Show Code</button>
 						<div class="code-block">
-							<pre><code class="language-csharp">
-	public void ChangeColor(Color color)
-	{
-		Laser.colorGradient.alphaKeys[0].alpha = 1f;
-		Laser.colorGradient.alphaKeys[1].alpha = 1f;
-		CurrentColor = color;
-		Laser.startColor = color;
-		Laser.endColor = color;
-	
-		Material closestMaterial = null;
-		float closestDistance = Mathf.Infinity;
-	
-		for (int i = 0; i < m_allMaterials.Count; i++)
-		{
-			Color materialColor = m_allMaterials[i].color;
-			float distance = ColorDistance(color, materialColor);
-	
-			if (distance < closestDistance)
-			{
-				closestMaterial = m_allMaterials[i];
-				closestDistance = distance;
-			}
-		}
-	
-		// Apply the closest material to the laser
-		Laser.material = closestMaterial;
-		m_lazerShooter.ChangeBallMaterial(Laser.material);
-		m_lazerShooter.CheckCurrentColor(CurrentColor);
-	}
-							</code></pre>
+						  <pre><code class="language-csharp">
+public override void InteractWater(float fillAmount)
+{
+	  if (_currentFill &lt; _maxFill)
+	  {
+		  _currentFill += fillAmount;
+	  }
+}
+						  </code></pre>
+						</div>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p>Here you can see that I use the function "InteractWater" to fill a bucket. This is convenient because I can call the same code when something needs to happen with the water.</p>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <!-- Image with CSS for formatting -->
+					  <img src="images/WavelineWaterBuckets.png" alt="Building with buckets" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+					</div>
+				  </div>
+				  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p></p>
+						<p>
+							So, I designed the bucket for the first challenge in a way that allows me to use it for all the other mini-challenges as well.</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
+
+			  <section id="project" class="main style2">
+				<div class="container">
+				  <div class="row gtr-150">
+					<div class="col-12">
+					  <h2>Pickups:</h2>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p>I was responsible for creating the pickups that extend your garden hose, which was relatively straightforward because my teammate had designed the garden hose code to be easily adaptable.</p>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="code-snippets">
+						<button class="snippet-toggle button scrolly">Show Code</button>
+						<div class="code-block">
+						  <pre><code class="language-csharp">
+private void Update()
+{
+	  RaycastHit hit;
+	  Debug.DrawRay(_cam.transform.position, _cam.transform.forward * _maxDistance);
+	  if (Physics.Raycast(_cam.transform.position, _cam.transform.forward, out hit, _maxDistance, _layerMask))
+	  {
+		  if (hit.collider.CompareTag("ExtraRopePickup"))
+		  {
+			  _pipePlacer.MaximumDistance += _ropeToGive;
+			  Instantiate(_particleConfetti, hit.collider.transform.position, hit.collider.transform.rotation);
+			  Destroy(hit.collider.gameObject);
+		  }
+	  }
+}
+						  </code></pre>
+						</div>
+					  </div>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+						<p></p>
+					  <p>In the code snippet, I cast a ray from the center of the camera and check for collisions with objects tagged as "ExtraRopePickup." When you aim at a pickup, extra rope is added automatically, and a particle system appears to indicate that you've collected it. Afterward, the pickup is removed, allowing you to continue exploring and completing mini-challenges.</p>
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <!-- Image with CSS for formatting -->
+					  <img src="images/WavelineMainmenu.png" alt="Main Menu" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+					</div>
+				  </div>
+			  
+				  <div class="row">
+					<div class="col-12">
+					  <div class="project-description">
+						<p>I also created the in-game menu, complete with button explanations and instructions on how to play.</p>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </section>
+			  
+			  <section id="MalagaPictures" class="main style2">
+				<div class="container">
+					<div class="row gtr-150">
+						<div class="col-12">
+							<header class="major">
+								<h2>Malaga:</h2>
+							</header>
+						</div>
+					</div>
+		
+					<div class="row gtr-150">
+						<div class="col-12 col-md-6">
+							<div class="malaga-description">
+								<p>I have some photos here of things I experienced in Malaga and things I found interesting.</p>
+							</div>
+						</div>
+					</div>
+		
+					<div class="row justify-content-center">
+						<div class="col-12 col-md-4">
+							<!-- Image with CSS for formatting -->
+							<img src="images/Uitzichtvanuithotel.jpg" alt="View from the hotel" class="malaga-image">
+						</div>
+						<div class="col-12 col-md-4">
+							<!-- Image with CSS for formatting -->
+							<p></p>
+							<img src="images/Strand-foto.jpg" alt="Beach" class="malaga-image">
+							<p></p>
+						</div>
+						<div class="col-12 col-md-4">
+							<!-- Image with CSS for formatting -->
+							<img src="images/Boulevaar.jpg" alt="Boulevard" class="malaga-image">
+						</div>
+					</div>
+		
+					<div class="row gtr-150">
+						<div class="col-12 col-md-6">
+							<div class="malaga-description">
+								<p></p>
+								<p>I'm very happy that I went on the trip, and I learned a lot from the city and also from game development.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<section id="project" class="main style2">
-		<div class="container">
-		  <div class="row gtr-150">
-			<div class="col-12 text-center">
-			  <h3>The Laser Target</h3>
-			  <p>When the lasers hit the target, the HitChest function is called, and the color of the laser is passed as a parameter. That color is then added to a list called m_unlockedColor. Additionally, within this function, the emission and rotation of the indicator are adjusted to reflect the laser's impact on the target. However, I have excluded specific lines of code for simplicity.</p>
-			  <p>Here's a visual representation of the laser hitting the target:</p>
-			  <div class="image-container">
-				<img src="images/Lazer On UnlockIndicator.gif" alt="Laser hitting the target" class="project-gif" />
-			  </div>
-			</div>
-		  </div>
-	  
-		  <div class="row">
-			<div class="col-12 text-center">
-			  <div class="code-snippets">
-				<button class="snippet-toggle button scrolly">Show Code</button>
-				<div class="code-block">
-				  <pre><code class="language-csharp">
-public void HitChest(Color color)
-{
-  for (int i = 0; i < m_allColors.Count; i++)
-  {
-	float distance = ColorDistance(color, m_allColors[i]);
-	if (distance <= m_poleData.ColourSimulairtyThreshold)
-	{
-	  if (!m_unlockedColor.Contains(m_allColors[i]))
-	  {
-		// Find the indicator with the corresponding color
-		GameObject colorIndicator = m_colorIndicators.FirstOrDefault(indicator => ColorDistance(indicator.GetComponent<Renderer>().sharedMaterial.GetColor("_Color"), m_allColors[i]) <= m_poleData.ColorIndicatorThreshold);
-
-		if (colorIndicator != null)
-		{
-		  // Code for adjusting the indicator's rotation and emission
-		  // (excluded for simplicity)
-		}
-		m_unlockedColor.Add(m_allColors[i]);
-	  }
-	}
-  }
-}
-				  </code></pre>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
-	  <section id="achievements" class="main style2">
-		<div class="container">
-		  <div class="row gtr-150">
-			<div class="col-12 text-center">
-			  <h3>Achievement System</h3>
-			  <p>In our game, I have developed a comprehensive achievement system. I utilized the observer pattern to easily add various achievements to the game.</p>
-			  <p>To handle the achievements, I implemented a Dictionary that executes specific actions when an achievement is unlocked.</p>
-			</div>
-		  </div>
-	  
-		  <div class="row">
-			<div class="col-12 text-center">
-			  <div class="code-snippets">
-				<button class="snippet-toggle button scrolly">Show Code</button>
-				<div class="code-block">
-				  <pre><code class="language-csharp">
-private Dictionary<AllAchievements, System.Action> m_achievementActionHandler;
-
-private void Awake()
-{
-	m_achievementActionHandler = new Dictionary<AllAchievements, System.Action>()
-	{
-	  { AllAchievements.ColorsMixed, () => HandleSingleAchievement(AllAchievements.ColorsMixed, "Colors mixing", m_colorsMixedIcon) },
-	  { AllAchievements.Cell1Completed, () => HandleSingleAchievement(AllAchievements.Cell1Completed, "The beginnings!", m_cell1CompletedIcon) },
-	  { AllAchievements.Cell2Completed, () => HandleSingleAchievement(AllAchievements.Cell2Completed, "Loop breaker!", m_cell2CompletedIcon) },
-	  { AllAchievements.Bookworm, () => HandleCountAchievement(ref m_booksOpened, FindObjectsOfType<Book>().Count(), AllAchievements.Bookworm, "Bookworm!", m_bookWormIcon) },
-	};
-}
-				  </code></pre>
-				</div>
-			  </div>
-			</div>
-		  </div>
-	  
-		  <div class="row gtr-150">
-			<div class="col-12 text-center">
-			  <p> </p>
-			  <p>By using the observer pattern and the Dictionary, I was able to easily define and manage various achievements. Each entry in the Dictionary corresponds to a specific achievement and its associated action.</p>
-			  <p>For example, when the "ColorsMixed" achievement is unlocked, the "Colors mixing" message will be displayed along with the appropriate icon (m_colorsMixedIcon). Similarly, other achievements such as "Cell1Completed", "Cell2Completed", and "Bookworm" are handled in a similar manner.</p>
-			</div>
-		  </div>
-	  
-		  <div class="row">
-			<div class="col-12 text-center">
-			  <div class="image-container">
-				<img src="images/Achievement Popups.gif" alt="Achievement Popups" class="achievement-gif" />
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </section>
-
-	  <section id="other-creations" class="main style2">
-		<div class="container">
-		  <div class="row gtr-150">
-			<div class="col-12 text-center">
-			  <h3>Other Creations</h3>
-			  <p>Aside from the achievements system, I have also developed various other features and effects to enhance the gameplay experience. Here are a couple of examples:</p>
-			</div>
-		  </div>
-	  
-		  <div class="row">
-			<div class="col-6 text-center">
-			  <div class="image-wrapper">
-				<img src="images/Door opened.gif" alt="Door Opened" />
-			  </div>
-			  <p>I made a door for the second level</p>
-			</div>
-			<div class="col-6 text-center">
-			  <div class="image-wrapper">
-				<img src="images/TextFont effect.gif" alt="Text Font Effect" />
-			  </div>
-			  <p>I added a cool effect for the UI</p>
-			</div>
-		  </div>
-		</div>
-	  </section>
+			</section>
 
 	  <section id="project" class="main style1">
 		<div class="container">
 		  <div class="row gtr-150">
 			<div class="col-12">
 			  <header class="major text-center">
-				<h2>Discover Starline</h2>
+				<h2>Discover Waveline</h2>
 			  </header>
 	  
 			  <div class="row gtr-150">
 				<div class="col-12 col-md-6">
 				  <div class="project-description">
-					<p>So that's how Starline came to life! If you're intrigued by the game and want to experience it for yourself, you can download it now from our itch.io page.</p>
 					<div class="text-center">
-						<a href="https://m1l4n.itch.io/starline" class="button" target="_blank">Download and Play on itch.io</a>
+						<a href="https://m1l4n.itch.io/waveline" class="button" target="_blank">Download and Play on itch.io</a>
 					  </div>
 				  </div>
 				</div>
-				<div class="col-12 col-md-6">
-				  <div class="youtube-video">
-					<iframe width="100%" height="400" src="https://www.youtube.com/embed/emEVTX8RPaU?autoplay=0&controls=0&showinfo=1&rel=0&loop=1&playlist=emEVTX8RPaU&mute=0" style="border: 1px solid rgba(89, 191, 197, 0.397)252;" allowfullscreen></iframe>
-					<div class="video-caption">Watch the Trailer</div>
+
+				<div class="row">
+					<div class="col-12">
+					  <img src="images/WavelineDuck.png" alt="Main Menu" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+					</div>
 				  </div>
-				</div>
-			  </div>
 	  
 			  <div class="row gtr-150">
 				<div class="col-12 text-center">
-				  <p>If you're still not convinced, take a moment to watch the awesome trailer created by our talented artists. It's sure to pique your interest!</p>
 				</div>
 			  </div>
 			</div>
@@ -831,6 +706,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 		        <li>Design: HTML5 UP</li>
 		    </ul>
 		</section>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>	
